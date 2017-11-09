@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gloria", "src\Gloria\Gloria.csproj", "{A85015BE-C008-445D-86F5-434A21042312}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Halloc", "src\HallocQuue\Halloc.csproj", "{492308A5-7EFC-495A-9AF9-2B1CD164FD0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A85015BE-C008-445D-86F5-434A21042312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A85015BE-C008-445D-86F5-434A21042312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A85015BE-C008-445D-86F5-434A21042312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A85015BE-C008-445D-86F5-434A21042312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492308A5-7EFC-495A-9AF9-2B1CD164FD0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492308A5-7EFC-495A-9AF9-2B1CD164FD0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492308A5-7EFC-495A-9AF9-2B1CD164FD0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492308A5-7EFC-495A-9AF9-2B1CD164FD0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95A75840-3624-418D-9650-864ED243F303}
+	EndGlobalSection
+EndGlobal

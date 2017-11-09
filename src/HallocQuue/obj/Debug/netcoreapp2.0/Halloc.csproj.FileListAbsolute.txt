@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\HallocQuue\bin\Debug\netcoreapp2.0\Halloc.deps.json
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\HallocQuue\bin\Debug\netcoreapp2.0\Halloc.dll
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\HallocQuue\bin\Debug\netcoreapp2.0\Halloc.pdb
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\HallocQuue\obj\Debug\netcoreapp2.0\Halloc.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\HallocQuue\obj\Debug\netcoreapp2.0\Halloc.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\HallocQuue\obj\Debug\netcoreapp2.0\Halloc.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\HallocQuue\obj\Debug\netcoreapp2.0\Halloc.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\HallocQuue\obj\Debug\netcoreapp2.0\Halloc.dll
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\HallocQuue\obj\Debug\netcoreapp2.0\Halloc.pdb

@@ -1,0 +1,11 @@
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\Gloria\bin\Debug\netcoreapp2.0\Gloria.deps.json
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\Gloria\bin\Debug\netcoreapp2.0\Gloria.dll
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\Gloria\bin\Debug\netcoreapp2.0\Gloria.pdb
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\Gloria\bin\Debug\netcoreapp2.0\Halloc.dll
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\Gloria\bin\Debug\netcoreapp2.0\Halloc.pdb
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\Gloria\obj\Debug\netcoreapp2.0\Gloria.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\Gloria\obj\Debug\netcoreapp2.0\Gloria.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\Gloria\obj\Debug\netcoreapp2.0\Gloria.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\Gloria\obj\Debug\netcoreapp2.0\Gloria.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\Gloria\obj\Debug\netcoreapp2.0\Gloria.dll
+C:\Users\Administrator\Desktop\Vs2017Project\HallocQuue\Gloria\obj\Debug\netcoreapp2.0\Gloria.pdb
