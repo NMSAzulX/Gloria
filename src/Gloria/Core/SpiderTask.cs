@@ -8,6 +8,10 @@ namespace Gloria
 {
     public class SpiderTask : AbstractHalloc
     {
+        public SpiderTask()
+        {
+            CurrentPage = 1;
+        }
         public string Url;
         public string UrlTemplate;
         public Regex MatchTemplete;
@@ -22,5 +26,7 @@ namespace Gloria
         public ISpider Executor;
         public string FileName;
         public string SavePath;
+        public string Token;
+        public int CurrentPage;
     }
 }

@@ -673,11 +673,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "J:\\VsGit\\Gloria\\src\\HallocQuue\\Halloc.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Vs2017Project\\YxSpider\\HallocQuue\\Halloc.csproj",
       "projectName": "Halloc",
-      "projectPath": "J:\\VsGit\\Gloria\\src\\HallocQuue\\Halloc.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\Vs2017Project\\YxSpider\\HallocQuue\\Halloc.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "J:\\VsGit\\Gloria\\src\\HallocQuue\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\Vs2017Project\\YxSpider\\HallocQuue\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -691,7 +691,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://nuget.cnblogs.com/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
@@ -710,7 +710,7 @@
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           }
         },

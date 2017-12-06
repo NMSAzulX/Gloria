@@ -689,11 +689,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "J:\\VsGit\\Gloria\\src\\Gloria\\Gloria.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Vs2017Project\\YxSpider\\Gloria\\Gloria.csproj",
       "projectName": "Gloria",
-      "projectPath": "J:\\VsGit\\Gloria\\src\\Gloria\\Gloria.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\Vs2017Project\\YxSpider\\Gloria\\Gloria.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "J:\\VsGit\\Gloria\\src\\Gloria\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\Vs2017Project\\YxSpider\\Gloria\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -707,13 +707,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://nuget.cnblogs.com/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "J:\\VsGit\\Gloria\\src\\HallocQuue\\Halloc.csproj": {
-              "projectPath": "J:\\VsGit\\Gloria\\src\\HallocQuue\\Halloc.csproj"
+            "C:\\Users\\Administrator\\Desktop\\Vs2017Project\\YxSpider\\HallocQuue\\Halloc.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\Vs2017Project\\YxSpider\\HallocQuue\\Halloc.csproj"
             }
           }
         }
@@ -730,7 +730,7 @@
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           }
         },

@@ -14,59 +14,33 @@ namespace Gloria
         internal static Dictionary<string, ITaskProcessor> Processors;
         internal static Dictionary<string, ISpider> SpiderActions;
         internal static List<Spider> Spiders;
-        internal static bool[] IsExecuting;
+
+        private static HashSet<SpiderTask> TasksCompleted;
         public static Action SpiderCompleted;
+
         public static bool IsCompleted
         {
-            get {
-                if (TaskQueue!=null)
+            get
+            {
+                foreach (var item in TasksCompleted)
                 {
-                    if (TaskQueue.Count>0)
+                    if (!item.IsCompleted)
                     {
                         return false;
                     }
                 }
-                if (Spiders!=null)
-                {
-                    for (int i = 0; i < Spiders.Count; i+=1)
-                    {
-                        if (Spiders[i].IsRunning)
-                        {
-                            return false;
-                        }
-                    }
-                }
-                for (int i = 0; i < IsExecuting.Length; i+=1)
-                {
-                    if (IsExecuting[i])
-                    {
-                        return false;
-                    }
-                }
-                for (int i = 0; i < Spiders.Count; i+=1)
-                {
-                    Spiders[i].IsAlive = false;
-                }
-#if DEBUG
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("[Console]\t检测到所有任务已经处理完毕！\r\n");
-#endif
                 return true;
             }
         }
         static SpiderRunner()
         {
-            TaskQueue = new HallocQueue<SpiderTask>();
-            Converts = new Dictionary<string, ITaskConvert>();
-            Filters = new Dictionary<string, ITaskFilter>();
-            Processors = new Dictionary<string, ITaskProcessor>();
-            SpiderActions = new Dictionary<string, ISpider>();
             Spiders = new List<Spider>();
-            IsExecuting = new bool[Hallocation.CustomerCount];
-            for (int i = 0; i < IsExecuting.Length; i+=1)
-            {
-                IsExecuting[i] = true;
-            }
+            TaskQueue = new HallocQueue<SpiderTask>();
+            TasksCompleted = new HashSet<SpiderTask>();
+            Filters = new Dictionary<string, ITaskFilter>();
+            SpiderActions = new Dictionary<string, ISpider>();
+            Converts = new Dictionary<string, ITaskConvert>();
+            Processors = new Dictionary<string, ITaskProcessor>();
         }
 
         public static void Equip<T>(string key = null)
@@ -132,7 +106,10 @@ namespace Gloria
                 ITaskConvert convert = Converts[task.ConvertorKey];
                 convert.Deal(task);
             }
-
+            if (task.IsCompleted)
+            {
+                return null;
+            }
             if (!String.IsNullOrEmpty(task.SpiderKey))
             {
                 task.Executor = SpiderActions[task.SpiderKey];
@@ -143,6 +120,7 @@ namespace Gloria
 
         public static void PostTask(SpiderTask task)
         {
+            TasksCompleted.Add(task);
             if (!task.IsCompleted)
             {
 #if DEBUG
@@ -169,40 +147,6 @@ namespace Gloria
         }
         public static void Run()
         {
-            for (int i = 0; i < Hallocation.CustomerCount; i += 1)
-            {
-                int j = i;
-                ThreadPool.QueueUserWorkItem((obj) =>
-                {
-                    while (true)
-                    {
-                        SpiderTask task = GetResult();
-                        if (task == null)
-                        {
-                            IsExecuting[j] = false;
-                            Thread.Sleep(400);
-                            continue;
-                        }
-                        IsExecuting[j] = true ;
-#if DEBUG
-                        Console.ForegroundColor = ConsoleColor.DarkGreen;
-                            Console.WriteLine("[Executor]\t拿到结果并交给{0}来处理\r\n", task.ProcessorKey);
-#endif
-                            if (!String.IsNullOrEmpty(task.FilterKey))
-                            {
-                                ITaskFilter filter = Filters[task.FilterKey];
-                                filter.Run(task);
-                            }
-                            if (!String.IsNullOrEmpty(task.ProcessorKey))
-                            {
-                                ITaskProcessor processor = Processors[task.ProcessorKey];
-                                processor.Run(task);
-                            }
-                        PostTask(task);
-                    }
-                });
-            }
-
             for (int i = 0; i < Hallocation.ProduceCount; i += 1)
             {
                 Spider spider = new Spider(i);
@@ -225,7 +169,38 @@ namespace Gloria
             {
                 CheckEnd();
             });
-           
+
+            for (int i = 0; i < Hallocation.CustomerCount; i += 1)
+            {
+                int j = i;
+                ThreadPool.QueueUserWorkItem((obj) =>
+                {
+                    while (true)
+                    {
+                        SpiderTask task = GetResult();
+                        if (task == null)
+                        {
+                            Thread.Sleep(400);
+                            continue;
+                        }
+#if DEBUG
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.WriteLine("[Executor]\t拿到结果并交给{0}来处理\r\n", task.ProcessorKey);
+#endif
+                            if (!String.IsNullOrEmpty(task.FilterKey))
+                            {
+                                ITaskFilter filter = Filters[task.FilterKey];
+                                filter.Run(task);
+                            }
+                            if (!String.IsNullOrEmpty(task.ProcessorKey))
+                            {
+                                ITaskProcessor processor = Processors[task.ProcessorKey];
+                                processor.Run(task);
+                            }
+                        PostTask(task);
+                    }
+                });
+            }
         }
 
         public static void CheckEnd()
